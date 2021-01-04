@@ -4,7 +4,7 @@
 
 int main () {
   char key;
-  Game g* = new Game();
+  Game* g = new Game();
   /*Board myBoard;
   myBoard.printBoard();
   myBoard.setMove(1,1,'X');
@@ -24,10 +24,10 @@ int main () {
   std::cout << myBoard.boardFull() << std::endl;
   */
   do {
-  g.run();
+  g->run();
   std::cout << "Play again? (y/n): ";
   std::cin >> key;
-} while (key)
+} while (key == 'y' || key == 'Y');
 
   return 0;
 }

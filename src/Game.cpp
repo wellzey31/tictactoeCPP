@@ -7,13 +7,21 @@ Game::Game() {
 }
 
 Game::~Game() {
-  delete board;
+  delete b;
 }
 
-void Game::run)() {
-  while (!b.boardFull()) {
+void Game::run() {
+  while (!b->boardFull()) {
+    b -> printBoard();
     playerTurn();
+    if (checkWin()) {
+      std::cout << "You win!" << std::endl;
+      win = true;
+      break;
+    }
   }
+  if(!win) std::cout << "Tie game." << std::endl;
+  if(win) b -> printBoard();
 }
 
 void Game::playerTurn() {
@@ -21,10 +29,16 @@ void Game::playerTurn() {
   std::cout << "Player's Turn!" << std::endl;
   std::cout << "Enter coordinates for your 'X'(Row Col): ";
   std::cin >> x >> y;
-  b.setMove(x,y,'X');
+  b->setMove(x,y,'X');
   std::cout << std::endl;
 }
 
 bool Game::checkWin() {
-  
+  return b->checkWin();
+}
+
+void Game::reset() {
+  turn = 0;
+  win = false;
+  b -> reset();
 }

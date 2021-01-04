@@ -15,8 +15,9 @@ class Game {
     void reset();
 
   private:
-    Board b = nullptr;
+    Board* b = nullptr;
     int turn = 0;
+    bool win = false;
 
 };
 #endif
