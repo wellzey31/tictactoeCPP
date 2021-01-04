@@ -7,14 +7,16 @@ class Game {
   public:
     Game();
     ~Game();
+    void run();
     void playerTurn();
-    void printBoard();
     bool checkWin();
     bool boardNotFull();
     void computerTurn();
+    void reset();
 
   private:
     Board b = nullptr;
+    int turn = 0;
 
 };
 #endif
