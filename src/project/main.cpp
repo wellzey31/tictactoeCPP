@@ -24,6 +24,7 @@ int main () {
   std::cout << myBoard.boardFull() << std::endl;
   */
   do {
+  g->reset();
   g->run();
   std::cout << "Play again? (y/n): ";
   std::cin >> key;

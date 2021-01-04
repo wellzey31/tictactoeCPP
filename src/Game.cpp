@@ -11,15 +11,24 @@ Game::~Game() {
 }
 
 void Game::run() {
-  while (!b->boardFull()) {
+  do {
     b -> printBoard();
-    playerTurn();
-    if (checkWin()) {
-      std::cout << "You win!" << std::endl;
-      win = true;
-      break;
+    if(turn % 2 == 0) {
+      playerTurn();
+      if (checkWin()) {
+        std::cout << "You win!" << std::endl;
+        win = true;
+        break;
+      }
+    } else {
+      computerTurn();
+      if (checkWin()) {
+        std::cout << "Computer wins." << std::endl;
+        win = true;
+        break;
+      }
     }
-  }
+  } while (!b->boardFull());
   if(!win) std::cout << "Tie game." << std::endl;
   if(win) b -> printBoard();
 }

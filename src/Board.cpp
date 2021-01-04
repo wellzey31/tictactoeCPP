@@ -45,24 +45,20 @@ bool Board::checkWin() {
   //check rows
   for (int i = 0; i < 3; i++) {
       if (b[i][1] == b[i][0] && b[i][2] == b[i][0] && b[i][0] != ' ') {
-      win = b[i][0];
       return true;
     }
   }
   //check cols
   for (int i = 0; i < 3; i++) {
       if (b[0][i] == b[1][i] && b[2][i] == b[0][i] && b[0][i] != ' ') {
-      win = b[0][i];
       return true;
     }
   }
   //check diagonals
   if (b[0][0] == b[1][1] && b[1][1] == b[2][2] && b[1][1] != ' ') {
-    win = b[1][1];
     return true;
   }
   if (b[0][2] == b[1][1] && b[1][1] == b[2][0] && b[1][1] != ' ') {
-    win = b[1][1];
     return true;
   }
   return false;
