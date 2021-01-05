@@ -31,6 +31,7 @@ void Game::run() {
   } while (!b->boardFull());
   if(!win) std::cout << "Tie game." << std::endl;
   if(win) b -> printBoard();
+  turn++;
 }
 
 void Game::playerTurn() {
@@ -50,4 +51,17 @@ void Game::reset() {
   turn = 0;
   win = false;
   b -> reset();
+}
+
+void Game::playFirst() {
+  char c;
+  std::cout << "Would you like to play first? (y/n): ";
+  std::cin >> cin;
+  if (c != 'y' || c != 'Y')  {
+    turn++;
+  }
+}
+
+void Game::computerTurn() {
+  int bestX = 0, bestY = 0;
 }

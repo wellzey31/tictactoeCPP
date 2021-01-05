@@ -10,8 +10,13 @@ class Board {
    bool boardFull();
    bool checkWin();
    void reset();
+   void bestMove();
+   int getBestX();
+   int getBestY();
 
  private:
    char** b;
+   int bestX = 0, bestY = 0;
+   int depth = 0;
 };
 #endif

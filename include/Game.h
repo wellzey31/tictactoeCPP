@@ -13,6 +13,7 @@ class Game {
     bool boardNotFull();
     void computerTurn();
     void reset();
+    void playFirst();
 
   private:
     Board* b = nullptr;

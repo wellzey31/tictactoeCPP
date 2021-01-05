@@ -1,4 +1,5 @@
 #include <iostream>
+#include <pair>
 #include "../include/Board.h"
 
 Board::Board() {
@@ -70,4 +71,26 @@ void Board::reset() {
       b[i][j] = ' ';
     }
   }
+}
+
+void Board::bestMove() {
+  if (depth == 0) {
+    bestX = 0; bestY = 0;
+    depth = 0;
+  }
+  for(int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      if (b[i][j] == ' ') {
+
+      }
+    }
+  }
+}
+
+int Board::getBestX() {
+  return bestX;
+}
+
+int Board::getBestY() {
+  return bestY;
 }

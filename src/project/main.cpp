@@ -25,6 +25,7 @@ int main () {
   */
   do {
   g->reset();
+  g->playFirst();
   g->run();
   std::cout << "Play again? (y/n): ";
   std::cin >> key;
