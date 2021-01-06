@@ -1,7 +1,10 @@
 #ifndef GAME_H
 #define GAME_H
 
-class Board;
+struct Move
+{
+    int row, col;
+};
 
 class Game {
   public:
@@ -9,16 +12,20 @@ class Game {
     ~Game();
     void run();
     void playerTurn();
-    bool checkWin();
-    bool boardNotFull();
     void computerTurn();
-    void reset();
     void playFirst();
+    Move chooseMove();
+    int minimax(int depth, bool isMax);
+    void printBoard();
+    void setMove(int row, int col, char c);
+    bool boardFull();
+    bool checkWin();
+    void reset();
 
   private:
-    Board* b = nullptr;
     int turn = 0;
     bool win = false;
+    char** b;
 
 };
 #endif

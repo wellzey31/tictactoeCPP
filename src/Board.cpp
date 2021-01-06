@@ -1,8 +1,7 @@
-#include <iostream>
-#include <pair>
+/*#include<bits/stdc++.h>
 #include "../include/Board.h"
 
-Board::Board() {
+Game::Board() {
   b = new char*[3];
   for(int i = 0; i < 3; i++) {
     b[i] = new char[3];
@@ -18,7 +17,7 @@ Board::~Board() {
 
 }
 
-void Board::printBoard() {
+void Game::printBoard() {
   for(int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
       std::cout << b[i][j];
@@ -42,7 +41,7 @@ bool Board::boardFull() {
   return true;
 }
 
-bool Board::checkWin() {
+bool Game::checkWin() {
   //check rows
   for (int i = 0; i < 3; i++) {
       if (b[i][1] == b[i][0] && b[i][2] == b[i][0] && b[i][0] != ' ') {
@@ -71,26 +70,4 @@ void Board::reset() {
       b[i][j] = ' ';
     }
   }
-}
-
-void Board::bestMove() {
-  if (depth == 0) {
-    bestX = 0; bestY = 0;
-    depth = 0;
-  }
-  for(int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) {
-      if (b[i][j] == ' ') {
-
-      }
-    }
-  }
-}
-
-int Board::getBestX() {
-  return bestX;
-}
-
-int Board::getBestY() {
-  return bestY;
-}
+}*/

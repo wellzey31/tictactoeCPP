@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 #include "../../include/Board.h"
 #include "../../include/Game.h"
 
