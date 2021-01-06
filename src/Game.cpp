@@ -65,9 +65,10 @@ bool Game::checkWin() {
 }
 
 void Game::run() {
+
   do {
-    printBoard();
-    std::cout << turn << std::endl;
+    if(turn != 1) printBoard();
+    //std::cout << turn << std::endl;
     if(turn % 2 == 0) {
       playerTurn();
       if (checkWin()) {
@@ -113,14 +114,14 @@ void Game::playFirst() {
   std::cout << "Would you like to play first? (y/n): ";
   std::cin >> c;
   if (!(c == 'y' || c == 'Y'))  {
-    std::cout << "what" << std::endl;
     turn++;
   }
 }
 
 void Game::computerTurn() {
+  std::cout << "Computer Turn: " << std::endl;
   Move cpuMove = chooseMove();
-  setMove(cpuMove.row, cpuMove.col, 'O');
+  b[cpuMove.row][cpuMove.col] = 'O';
 }
 
 Move Game::chooseMove() {
